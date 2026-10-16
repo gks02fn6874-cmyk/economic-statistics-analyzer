@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* 화면은 밝은 테마 하나만 쓴다 (dark: 클래스는 .dark가 붙을 때만 켜지므로 꺼 둔 상태). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #404040;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: #126c83;
+  --color-brand-mid: #25af9d;
+  --color-brand-light: #5ccc9f;
+  --color-panel: #f4f6f8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-pretendard), "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+.hero-gradient {
+  background:
+    linear-gradient(90deg, rgba(11, 171, 97, 0.1) 0%, rgba(37, 175, 157, 0.1) 100%),
+    linear-gradient(90deg, #126c83 1%, #5ccc9f 100%);
+}
