@@ -1,6 +1,5 @@
 import Link from "next/link";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
+import PageShell from "@/components/PageShell";
 
 export const metadata = {
   title: "KOSIS 엑셀 다운로드 안내 | 경제통계 종합분석 프로그램",
@@ -59,18 +58,15 @@ const problems = [
 
 export default function GuidePage() {
   return (
-    <>
-      <div className="hero-gradient">
-        <SiteHeader />
-        <div className="mx-auto w-full max-w-6xl px-6 pt-6 pb-10 text-white">
-          <h1 className="text-2xl font-bold sm:text-3xl">KOSIS 엑셀 다운로드 안내</h1>
-          <p className="mt-2 text-sm opacity-90">
-            KOSIS 국가통계포털에서 받은 엑셀을 <b>수정하지 않고 그대로</b> 올릴 수 있습니다. 아래
-            순서와 설정대로 받으면 자동으로 인식됩니다.
-          </p>
-        </div>
-      </div>
-    <main className="mx-auto w-full max-w-3xl px-6 py-10">
+    <PageShell
+      title="KOSIS 엑셀 다운로드 안내"
+      lead={
+        <>
+          KOSIS 국가통계포털에서 받은 엑셀을 <b>수정하지 않고 그대로</b> 올릴 수 있습니다. 아래 순서와
+          설정대로 받으면 자동으로 인식됩니다.
+        </>
+      }
+    >
       <Link href="/" className="text-sm text-brand underline">
         ← 업로드 화면으로
       </Link>
@@ -221,8 +217,6 @@ export default function GuidePage() {
           <li>공개된 통계만 올려 주세요. 올린 파일은 서버에 저장되지 않습니다.</li>
         </ul>
       </section>
-    </main>
-      <SiteFooter />
-    </>
+    </PageShell>
   );
 }

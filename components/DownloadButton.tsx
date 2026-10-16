@@ -33,20 +33,17 @@ export default function DownloadButton({ result }: { result: AnalysisResult }) {
   }
 
   return (
-    <div className="mt-4 flex flex-wrap items-center gap-3">
+    <div className="flex flex-col items-end gap-1">
       <button
         type="button"
         onClick={download}
         disabled={busy}
-        className="rounded border border-brand px-3 py-1.5 text-sm font-medium text-brand disabled:opacity-50 dark:border-blue-400 dark:text-blue-300"
+        className="rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-dark disabled:opacity-50"
       >
-        {busy ? "만드는 중…" : "결과를 엑셀로 내려받기"}
+        {busy ? "만드는 중…" : "엑셀로 내려받기"}
       </button>
-      <span className="text-xs text-zinc-500">
-        지표별 시트(원자료·증감률·이동평균·기여도·상관관계)와 요약정보가 담깁니다. 서버에는 저장되지 않습니다.
-      </span>
       {problem && (
-        <span role="alert" className="text-sm text-red-700 dark:text-red-300">
+        <span role="alert" className="text-xs text-red-700">
           {problem}
         </span>
       )}

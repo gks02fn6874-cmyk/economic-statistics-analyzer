@@ -74,7 +74,7 @@ export default function KosisPreview({
   }
 
   return (
-    <div className="mt-6 rounded border border-brand/40 p-4 dark:border-blue-800">
+    <div>
       <h2 className="text-lg font-semibold">KOSIS 원본 파일로 인식했습니다</h2>
       <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
         날짜는 행으로, 품목은 열로 바꿔서 계산합니다. 원본 수치와 단위는 바꾸지 않습니다. 아래

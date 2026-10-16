@@ -293,10 +293,8 @@ export default function Charts({ result }: { result: AnalysisResult }) {
   const barCount = result.items.filter((_, item) => seriesOf(result, compareKey, item)[at] !== null).length;
 
   return (
-    <section className="mt-6 rounded border border-zinc-200 p-4 dark:border-zinc-700">
-      <h2 className="text-lg font-semibold">그래프</h2>
-
-      <h3 className="mt-3 font-semibold">시계열 추세</h3>
+    <div>
+      <h3 className="text-xl font-semibold tracking-tight text-zinc-900">시계열 추세</h3>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
         <label className="flex items-center gap-1.5">
           지표
@@ -354,7 +352,7 @@ export default function Charts({ result }: { result: AnalysisResult }) {
         <LineChart periods={result.periods} lines={lines} metric={trendMetric} />
       )}
 
-      <h3 className="mt-8 font-semibold">항목별 비교</h3>
+      <h3 className="mt-12 border-t border-zinc-100 pt-10 text-xl font-semibold tracking-tight text-zinc-900">항목별 비교</h3>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
         <label className="flex items-center gap-1.5">
           지표
@@ -387,6 +385,6 @@ export default function Charts({ result }: { result: AnalysisResult }) {
           : `값이 있는 ${barCount}개 항목을 모두 보여 줍니다.`}
       </p>
       <BarChart rows={bars} metric={compareMetric} />
-    </section>
+    </div>
   );
 }

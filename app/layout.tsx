@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { AnalysisProvider } from "@/components/AnalysisProvider";
 import "./globals.css";
 
 // Pretendard (SIL OFL 1.1) 가변 글꼴. 외부 서버 없이 이 프로젝트 안의 파일로 불러온다.
@@ -21,7 +22,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ko"
       className={`${pretendard.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <noscript>
+          <style>{".reveal{opacity:1!important;transform:none!important}"}</style>
+        </noscript>
+        <AnalysisProvider>{children}</AnalysisProvider>
+      </body>
     </html>
   );
 }
